@@ -22,7 +22,7 @@ jobs:
       - name: Inject API Key from Vault
         run: |
           # 这一行是关键：用保险箱里的 aka_lawyer_key 替换 index.html 里的占位符
-          sed -i "s/AKA_LAWYER_SECRET_PLACEHOLDER/${{ secrets.aka_lawyer_key }}/g" index.html
+          sed -i "s/AKA_LAWYER_SECRET_PLACEHOLDER/${{ secrets.AKA_LAWYER_KEY }}/g" index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
