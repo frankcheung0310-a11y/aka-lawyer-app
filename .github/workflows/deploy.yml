@@ -1,0 +1,37 @@
+name: Deploy AKA Lawyer with Secret
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Inject API Key from Vault
+        run: |
+          # 这一行是关键：用保险箱里的 aka_lawyer_key 替换 index.html 里的占位符
+          sed -i "s/AKA_LAWYER_SECRET_PLACEHOLDER/${{ secrets.aka_lawyer_key }}/g" index.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
