@@ -19,100 +19,99 @@
     <div class="max-w-3xl mx-auto py-12 px-6">
         <header class="text-center mb-10">
             <h1 class="text-5xl font-extrabold tracking-tighter mb-2">AKA LAWYER</h1>
-            <p class="text-blue-200 text-xs font-medium tracking-[0.4em] uppercase">Est. 2002 | AI Legal Consultant</p>
+            <p class="text-blue-200 text-xs font-medium tracking-[0.4em] uppercase">Est. 2002 | AI Legal Intelligence</p>
         </header>
 
         <div class="chat-container rounded-3xl border border-white/20 p-6 shadow-2xl">
-            <div id="chat-box" class="bg-white rounded-2xl h-[500px] overflow-y-auto p-6 mb-6 flex flex-col gap-4 shadow-inner text-navy text-sm">
-                <div class="bg-blue-50 p-4 rounded-2xl rounded-tl-none max-w-[90%] self-start border border-blue-100 shadow-sm">
-                    Welcome. I am <strong>AKA Lawyer</strong>, your AI consultant since 2002. Powered by Grok-4. How can I help?
+            <div id="chat-box" class="bg-white rounded-2xl h-[450px] overflow-y-auto p-6 mb-6 flex flex-col gap-4 shadow-inner text-navy text-sm">
+                <div class="bg-blue-50 p-4 rounded-xl self-start border border-blue-100">
+                    Welcome. I am <strong>AKA Lawyer</strong>. I am now powered by Grok-4-1-Fast. How can I help?
                 </div>
             </div>
 
             <div class="relative">
                 <input id="user-input" type="text" placeholder="Describe your legal inquiry..." 
-                    class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-5 pr-36 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all">
+                    class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-5 pr-36 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white">
                 <button onclick="askAI()" class="absolute right-2 top-2 bottom-2 bg-white text-[#004D8B] font-bold px-8 rounded-xl hover:bg-blue-50 active:scale-95 transition-all uppercase tracking-tighter">
                     Consult
                 </button>
             </div>
         </div>
 
-        <footer class="mt-12 text-center border-t border-white/10 pt-8 opacity-60">
-            <div class="text-[10px] uppercase tracking-widest leading-loose">
-                &copy; 2026 AKA LAWYER PROJECT | LEGACY SINCE 2002 | POWERED BY GROK-4
-            </div>
+        <footer class="mt-8 text-center opacity-40 text-[10px] tracking-widest">
+            &copy; 2026 AKA LAWYER PROJECT | LEGACY SINCE 2002 | POWERED BY GROK-4-1-FAST
         </footer>
     </div>
 
     <script>
-        // GitHub Action 将自动替换此处的占位符
-        var API_KEY = 'AKA_LAWYER_SECRET_PLACEHOLDER';
+        // 【重要】如果你正在测试且还没配置 GitHub Action，请临时把下面这行改成你的真实 API Key
+        // 比如: var SECRET_KEY = 'xai-C3vzGwnuy...';
+        var SECRET_KEY = 'AKA_LAWYER_SECRET_PLACEHOLDER';
 
         function askAI() {
             var input = document.getElementById('user-input');
-            var chatBox = document.getElementById('chat-box');
-            var userText = input.value;
+            var box = document.getElementById('chat-box');
+            var text = input.value;
 
-            if (!userText || userText.trim() === '') { return; }
+            if (!text || text.trim() === '') return;
             input.value = '';
 
-            // 1. 渲染用户消息 (使用纯字符串拼接，避开反引号)
-            var userDiv = document.createElement('div');
-            userDiv.className = 'bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none max-w-[85%] self-end shadow-md animate-fade-in';
-            userDiv.innerText = userText;
-            chatBox.appendChild(userDiv);
-            chatBox.scrollTop = chatBox.scrollHeight;
+            // 用户气泡
+            var uDiv = document.createElement('div');
+            uDiv.className = 'bg-blue-600 text-white p-4 rounded-2xl self-end max-w-[85%] animate-fade-in';
+            uDiv.innerText = text;
+            box.appendChild(uDiv);
+            box.scrollTop = box.scrollHeight;
 
-            // 2. 准备请求 (完全按照你给的 Grok curl 格式)
+            // 构造完全对齐你提供的 curl 的请求
             var payload = {
                 "model": "grok-4-1-fast",
                 "messages": [
-                    { "role": "system", "content": "You are AKA Lawyer, an expert legal AI established in 2002. Provide professional, concise legal insights." },
-                    { "role": "user", "content": userText }
+                    { "role": "system", "content": "You are AKA Lawyer, a professional AI legal consultant. Established in 2002." },
+                    { "role": "user", "content": text }
                 ],
                 "stream": false,
                 "temperature": 0
             };
 
-            // 3. 执行请求 (使用 window.fetch 确保全局可查)
-            window.fetch('https://api.x.ai/v1/chat/completions', {
+            fetch('https://api.x.ai/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + API_KEY
+                    'Authorization': 'Bearer ' + SECRET_KEY
                 },
                 body: JSON.stringify(payload)
             })
-            .then(function(res) { return res.json(); })
+            .then(function(res) {
+                // 如果返回的不是 200 OK，抛出具体的错误码
+                if (!res.ok) { 
+                    return res.json().then(function(errData) {
+                        throw new Error('HTTP ' + res.status + ': ' + (errData.error ? errData.error.message : 'Unknown API Error'));
+                    });
+                }
+                return res.json();
+            })
             .then(function(data) {
-                if (data.error) { throw new Error(data.error.message); }
-                
-                var aiResponse = data.choices[0].message.content;
-                var aiDiv = document.createElement('div');
-                aiDiv.className = 'bg-white border border-blue-100 p-4 rounded-2xl rounded-tl-none max-w-[90%] self-start shadow-sm leading-relaxed text-navy animate-fade-in';
-                
-                // 处理文本格式
-                var formattedText = aiResponse.split('\n').join('<br>');
-                var footerNote = '<p style="margin-top:10px; font-size:10px; color:#94a3b8; border-top:1px solid #f1f5f9; padding-top:8px; font-style:italic;">Grok-4-Fast Intelligence | Legacy 2002</p>';
-                
-                aiDiv.innerHTML = formattedText + footerNote;
-                chatBox.appendChild(aiDiv);
-                chatBox.scrollTop = chatBox.scrollHeight;
+                var reply = data.choices[0].message.content;
+                var aDiv = document.createElement('div');
+                aDiv.className = 'bg-slate-50 p-4 rounded-2xl self-start max-w-[90%] border border-blue-100 text-navy animate-fade-in';
+                aDiv.innerHTML = reply.split('\n').join('<br>') + 
+                    '<div style="font-size:9px; color:#94a3b8; margin-top:10px; border-top:1px dotted #cbd5e1; pt-2">Grok-4-Fast Intelligence | Legacy 2002</div>';
+                box.appendChild(aDiv);
+                box.scrollTop = box.scrollHeight;
             })
             .catch(function(err) {
-                var errDiv = document.createElement('div');
-                errDiv.className = 'text-red-300 text-[10px] text-center py-2 uppercase';
-                errDiv.innerText = 'Service Error: ' + err.message;
-                chatBox.appendChild(errDiv);
+                var eDiv = document.createElement('div');
+                eDiv.className = 'text-red-400 text-[11px] text-center font-bold py-4 uppercase tracking-widest';
+                // 这里会显示具体的错误原因
+                eDiv.innerText = 'Consultation Error: ' + err.message;
+                box.appendChild(eDiv);
+                console.error('Full Error Detail:', err);
             });
         }
 
-        // 监听回车键 (使用传统 onkeypress 规避 Linter)
         document.getElementById('user-input').onkeypress = function(e) {
-            if (e.keyCode === 13 || e.key === 'Enter') {
-                askAI();
-            }
+            if (e.keyCode === 13) askAI();
         };
     </script>
 </body>
