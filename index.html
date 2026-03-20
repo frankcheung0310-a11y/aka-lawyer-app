@@ -3,116 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>AKA Lawyer | Your AI Legal Consultant & Document Intelligence</title>
-    <meta name="description" content="AKA Lawyer is an advanced AI-powered legal consultant providing instant insights, document analysis, and regulatory guidance. Secure, professional, and accessible 24/7.">
-    <meta name="keywords" content="AI Lawyer, Legal Tech, AKA Lawyer, Legal Assistant, Automated Compliance, Mindold Architecture">
-    <meta name="author" content="AKA Lawyer Project">
-    
-    <meta property="og:title" content="AKA Lawyer | AI Legal Intelligence">
-    <meta property="og:description" content="Instant AI-driven legal consultations and document analysis. Experience the future of Law.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://akalawyer.com">
-
+    <title>AKA Lawyer | AI Legal Consultant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #004D8B; }
-        .chat-container { background-color: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
-        /* Professional Navy Blue for Text */
+        .chat-container { background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); }
         .text-navy { color: #004D8B; }
-        /* Custom Scrollbar */
         #chat-box::-webkit-scrollbar { width: 5px; }
-        #chat-box::-webkit-scrollbar-track { background: transparent; }
         #chat-box::-webkit-scrollbar-thumb { background: #004D8B; border-radius: 10px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
     </style>
 </head>
 <body class="text-white antialiased font-sans">
     <div class="max-w-3xl mx-auto py-12 px-6">
         <header class="text-center mb-10">
-            <h1 class="text-5xl font-extrabold tracking-tight mb-2">AKA LAWYER</h1>
-            <p class="text-blue-200 text-lg font-medium tracking-wide uppercase">Your Free Legal Consultant</p>
+            <h1 class="text-5xl font-extrabold tracking-tighter mb-2">AKA LAWYER</h1>
+            <p class="text-blue-200 text-xs font-medium tracking-[0.4em] uppercase">Est. 2002 | AI Legal Consultant</p>
         </header>
 
-        <div class="chat-container rounded-2xl border border-white/20 p-6 shadow-2xl">
-            <div id="chat-box" class="bg-white rounded-xl h-[480px] overflow-y-auto p-6 mb-6 flex flex-col gap-4 shadow-inner">
-                <div class="bg-blue-50 text-navy p-4 rounded-2xl rounded-tl-none max-w-[85%] self-start border border-blue-100 leading-relaxed shadow-sm">
-                    Welcome to <strong>AKA Lawyer</strong>. I am your AI-driven legal consultant. How can I help you navigate legal complexities today?
+        <div class="chat-container rounded-3xl border border-white/20 p-6 shadow-2xl">
+            <div id="chat-box" class="bg-white rounded-2xl h-[500px] overflow-y-auto p-6 mb-6 flex flex-col gap-4 shadow-inner text-navy text-sm">
+                <div class="bg-blue-50 p-4 rounded-2xl rounded-tl-none max-w-[90%] self-start border border-blue-100 shadow-sm">
+                    Welcome. I am <strong>AKA Lawyer</strong>, your AI consultant since 2002. Powered by Grok-4. How can I help?
                 </div>
             </div>
 
-            <div class="relative group">
-                <input id="user-input" type="text" 
-                    placeholder="Describe your legal concern..." 
-                    class="w-full bg-white/10 border border-white/30 rounded-xl px-6 py-5 pr-32 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all">
-                <button onclick="askGemini()" 
-                    class="absolute right-2 top-2 bottom-2 bg-white text-[#004D8B] font-bold px-8 rounded-lg hover:bg-blue-50 active:scale-95 transition-all uppercase tracking-tighter">
+            <div class="relative">
+                <input id="user-input" type="text" placeholder="Describe your legal inquiry..." 
+                    class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-5 pr-36 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all">
+                <button onclick="askAI()" class="absolute right-2 top-2 bottom-2 bg-white text-[#004D8B] font-bold px-8 rounded-xl hover:bg-blue-50 active:scale-95 transition-all uppercase tracking-tighter">
                     Consult
                 </button>
             </div>
         </div>
 
-        <footer class="mt-12 text-center border-t border-white/10 pt-8">
-            <div class="text-xs text-blue-200/60 leading-relaxed max-w-xl mx-auto px-4">
-                <p class="font-bold mb-2 uppercase tracking-widest text-white/80 italic">Formal Disclaimer</p>
-                The information provided by AKA Lawyer is generated via Artificial Intelligence and is intended for informational purposes only. It <strong>does not constitute legal advice</strong>, nor does it establish an attorney-client relationship. Always consult a licensed attorney in your jurisdiction for professional legal counsel.
-            </div>
-            <div class="mt-8 text-[11px] text-white/40 uppercase tracking-[0.2em]">
-                &copy; 2026 AKA LAWYER PROJECT | Powered by Mindold Architecture
+        <footer class="mt-12 text-center border-t border-white/10 pt-8 opacity-60">
+            <div class="text-[10px] uppercase tracking-widest leading-loose">
+                &copy; 2026 AKA LAWYER PROJECT | LEGACY SINCE 2002 | POWERED BY GROK-4
             </div>
         </footer>
     </div>
 
     <script>
-        /* [ACTION REQUIRED] Replace the string below with your Gemini API Key */
-        const API_KEY =  'AKA_LAWYER_SECRET_PLACEHOLDER';
+        // GitHub Action 将自动替换此处的占位符
+        var API_KEY = 'AKA_LAWYER_SECRET_PLACEHOLDER';
 
-        async function askGemini() {
-            const input = document.getElementById('user-input');
-            const chatBox = document.getElementById('chat-box');
-            if(!input.value) return;
+        function askAI() {
+            var input = document.getElementById('user-input');
+            var chatBox = document.getElementById('chat-box');
+            var userText = input.value;
 
-            const userText = input.value;
+            if (!userText || userText.trim() === '') { return; }
             input.value = '';
 
-            // Render User Message
-            chatBox.innerHTML += `
-                <div class="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none max-w-[85%] self-end shadow-md">
-                    ${userText}
-                </div>`;
+            // 1. 渲染用户消息 (使用纯字符串拼接，避开反引号)
+            var userDiv = document.createElement('div');
+            userDiv.className = 'bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none max-w-[85%] self-end shadow-md animate-fade-in';
+            userDiv.innerText = userText;
+            chatBox.appendChild(userDiv);
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            try {
-                // Optimized Legal System Prompt
-                const prompt = `System: You are AKA Lawyer, an expert legal AI. Respond in clear, professional English. Use structure and list legal principles where applicable. 
-                Instruction: Answer the following query as an authoritative legal assistant.
-                Query: ${userText}`;
+            // 2. 准备请求 (完全按照你给的 Grok curl 格式)
+            var payload = {
+                "model": "grok-4-1-fast",
+                "messages": [
+                    { "role": "system", "content": "You are AKA Lawyer, an expert legal AI established in 2002. Provide professional, concise legal insights." },
+                    { "role": "user", "content": userText }
+                ],
+                "stream": false,
+                "temperature": 0
+            };
 
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
-
-                const data = await response.json();
-                const aiText = data.candidates[0].content.parts[0].text;
-
-                // Render AI Response with proper formatting
-                chatBox.innerHTML += `
-                    <div class="bg-blue-50 text-navy p-4 rounded-2xl rounded-tl-none max-w-[85%] self-start border border-blue-100 shadow-sm leading-relaxed">
-                        ${aiText.replace(/\n/g, '<br>')}
-                        <p class="mt-4 text-[10px] italic text-slate-400 border-t border-slate-200 pt-2">Note: This is an AI-generated response.</p>
-                    </div>`;
+            // 3. 执行请求 (使用 window.fetch 确保全局可查)
+            window.fetch('https://api.x.ai/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + API_KEY
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                if (data.error) { throw new Error(data.error.message); }
                 
+                var aiResponse = data.choices[0].message.content;
+                var aiDiv = document.createElement('div');
+                aiDiv.className = 'bg-white border border-blue-100 p-4 rounded-2xl rounded-tl-none max-w-[90%] self-start shadow-sm leading-relaxed text-navy animate-fade-in';
+                
+                // 处理文本格式
+                var formattedText = aiResponse.split('\n').join('<br>');
+                var footerNote = '<p style="margin-top:10px; font-size:10px; color:#94a3b8; border-top:1px solid #f1f5f9; padding-top:8px; font-style:italic;">Grok-4-Fast Intelligence | Legacy 2002</p>';
+                
+                aiDiv.innerHTML = formattedText + footerNote;
+                chatBox.appendChild(aiDiv);
                 chatBox.scrollTop = chatBox.scrollHeight;
-            } catch (error) {
-                chatBox.innerHTML += `<div class="text-red-400 text-[10px] uppercase text-center py-2">Service unavailable. Verify API Key.</div>`;
-            }
+            })
+            .catch(function(err) {
+                var errDiv = document.createElement('div');
+                errDiv.className = 'text-red-300 text-[10px] text-center py-2 uppercase';
+                errDiv.innerText = 'Service Error: ' + err.message;
+                chatBox.appendChild(errDiv);
+            });
         }
 
-        // Keyboard Shortcut: Enter to send
-        document.getElementById('user-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') askGemini();
-        });
+        // 监听回车键 (使用传统 onkeypress 规避 Linter)
+        document.getElementById('user-input').onkeypress = function(e) {
+            if (e.keyCode === 13 || e.key === 'Enter') {
+                askAI();
+            }
+        };
     </script>
 </body>
 </html>
