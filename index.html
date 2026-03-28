@@ -1,118 +1,958 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKA Lawyer | AI Legal Consultant</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background-color: #004D8B; }
-        .chat-container { background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); }
-        .text-navy { color: #004D8B; }
-        #chat-box::-webkit-scrollbar { width: 5px; }
-        #chat-box::-webkit-scrollbar-thumb { background: #004D8B; border-radius: 10px; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>AkaLawyer.com | Premium Legal Domain For Sale — Law Firms &amp; LegalTech</title>
+  <meta name="description" content="AkaLawyer.com — a premium .com domain at the intersection of traditional legal practice and AI-powered legal technology. AKA: the most recognized abbreviation in law. Available for acquisition.">
+  <meta name="keywords" content="akalawyer, domain for sale, legal domain, law firm domain, legaltech domain, AI legal platform, lawyer domain, premium .com, legal AI domain, law practice domain">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://akalawyer.com">
+
+  <!-- OG -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://akalawyer.com">
+  <meta property="og:title" content="AkaLawyer.com — Premium Legal Domain For Sale">
+  <meta property="og:description" content="AKA: Also Known As. The most cited abbreviation in legal documents, now available as a premium .com brand for law firms and LegalTech platforms.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AkaLawyer.com — Premium Legal Domain For Sale">
+  <meta name="twitter:description" content="AKA Lawyer. The domain built for the future of legal practice and AI-powered legal services.">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "AkaLawyer.com - Premium Legal Domain For Sale",
+    "description": "Premium domain at the intersection of traditional legal practice and AI-powered legal technology.",
+    "url": "https://akalawyer.com",
+    "offers": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "AkaLawyer.com Domain Name",
+        "description": "Premium .com domain combining AKA legal abbreviation with Lawyer for law firms and LegalTech"
+      }
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black:    #0d0d0d;
+      --ink:      #1a1a1a;
+      --gray:     #4a4a4a;
+      --light:    #7a7a7a;
+      --rule:     #d0c9bc;
+      --rule-lt:  #e8e2d8;
+      --bg:       #faf8f4;
+      --bg-warm:  #f4f1eb;
+      --white:    #ffffff;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: var(--bg);
+      border-bottom: 2px solid var(--black);
+      padding: 0.85rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--black);
+    }
+
+    .topbar-status {
+      font-family: Georgia, serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .status-rule {
+      width: 20px;
+      height: 1px;
+      background: var(--light);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 9rem 3rem 6rem;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .hero-vol {
+      font-family: Georgia, serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 2.5rem;
+      animation: fadeIn 1s ease both;
+    }
+
+    .hero-rule-top {
+      width: 60px;
+      height: 2px;
+      background: var(--black);
+      margin: 0 auto 2rem;
+      animation: fadeIn 1s 0.1s ease both;
+    }
+
+    .hero-domain {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 11vw, 9rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      color: var(--black);
+      animation: fadeUp 0.9s 0.2s ease both;
+    }
+
+    .hero-domain .aka { color: var(--black); }
+    .hero-domain .lawyer {
+      font-style: italic;
+      color: var(--black);
+    }
+    .hero-domain .tld {
+      font-size: 0.3em;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--light);
+      vertical-align: super;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-rule-mid {
+      width: 100%;
+      max-width: 600px;
+      height: 1px;
+      background: var(--rule);
+      margin: 2.5rem auto;
+      animation: fadeIn 1s 0.4s ease both;
+    }
+
+    .hero-latin {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+      animation: fadeUp 0.9s 0.45s ease both;
+    }
+
+    .hero-translation {
+      font-family: Georgia, serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--light);
+      animation: fadeUp 0.9s 0.5s ease both;
+    }
+
+    .hero-sub {
+      max-width: 580px;
+      margin: 2.5rem auto 0;
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.9;
+      animation: fadeUp 0.9s 0.6s ease both;
+    }
+
+    .hero-sub strong { color: var(--ink); font-weight: normal; }
+    .hero-sub em { font-style: italic; }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: Georgia, serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      animation: fadeIn 2s 1.5s ease both;
+      opacity: 0;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, var(--rule), transparent);
+      animation: scrollDrop 1.5s infinite;
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 3rem; }
+
+    .section {
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sec-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .sec-num {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.75rem;
+      color: var(--light);
+      flex-shrink: 0;
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.02em;
+      flex: 1;
+    }
+
+    .sec-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── DEFINITION BLOCK ── */
+    .definition-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--rule);
+    }
+
+    .def-cell {
+      padding: 3rem;
+      border-right: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .def-cell:last-child { border-right: none; }
+
+    .def-term {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .def-cell:last-child .def-term { font-style: italic; }
+
+    .def-pronunciation {
+      font-family: Georgia, serif;
+      font-size: 0.8rem;
+      color: var(--light);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .def-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--rule);
+      margin-bottom: 1.5rem;
+    }
+
+    .def-part {
+      font-family: Georgia, serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1rem;
+    }
+
+    .def-body {
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.85;
+    }
+
+    .def-body strong { color: var(--ink); font-weight: normal; }
+    .def-body em { font-style: italic; color: var(--ink); }
+
+    .def-cite {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule-lt);
+      font-family: Georgia, serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--light);
+      line-height: 1.7;
+    }
+
+    /* ── BRIEF / STORY ── */
+    .brief-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .brief-sidebar {
+      position: sticky;
+      top: 5rem;
+      padding-top: 0.5rem;
+      border-top: 2px solid var(--black);
+    }
+
+    .brief-sidebar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-top: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .brief-sidebar-sub {
+      font-family: Georgia, serif;
+      font-size: 0.82rem;
+      color: var(--light);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .brief-content p {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 2;
+      margin-bottom: 1.75rem;
+    }
+
+    .brief-content p strong { color: var(--ink); font-weight: normal; }
+    .brief-content p em { font-style: italic; }
+
+    .exhibit-box {
+      margin: 2.5rem 0;
+      padding: 2rem 2.5rem;
+      background: var(--bg-warm);
+      border-left: 3px solid var(--black);
+    }
+
+    .exhibit-label {
+      font-family: Georgia, serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 0.75rem;
+    }
+
+    .exhibit-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--ink);
+      line-height: 1.8;
+    }
+
+    /* ── GROUNDS (STRENGTHS) ── */
+    .grounds-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .ground-item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: start;
+      gap: 2.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--rule-lt);
+    }
+
+    .ground-item:first-child { border-top: 1px solid var(--rule-lt); }
+
+    .ground-num {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.75rem;
+      color: var(--light);
+      padding-top: 0.2rem;
+    }
+
+    .ground-text h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .ground-text p {
+      font-family: Georgia, serif;
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    .ground-tag {
+      font-family: Georgia, serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light);
+      border: 1px solid var(--rule);
+      padding: 0.3em 0.8em;
+      white-space: nowrap;
+      margin-top: 0.2rem;
+    }
+
+    /* ── PARTIES (BUYERS) ── */
+    .parties-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border: 1px solid var(--rule);
+    }
+
+    .party-card {
+      padding: 2.5rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.3s;
+    }
+
+    .party-card:nth-child(2n) { border-right: none; }
+    .party-card:nth-child(3),
+    .party-card:nth-child(4) { border-bottom: none; }
+    .party-card:hover { background: var(--bg-warm); }
+
+    .party-type {
+      font-family: Georgia, serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1rem;
+    }
+
+    .party-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .party-desc {
+      font-family: Georgia, serif;
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* ── CTA / JUDGMENT ── */
+    .judgment-section {
+      padding: 7rem 3rem;
+      text-align: center;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .judgment-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 28px,
+        rgba(255,255,255,0.02) 28px,
+        rgba(255,255,255,0.02) 29px
+      );
+    }
+
+    .judgment-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .judgment-rule-top {
+      width: 60px;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      margin: 0 auto 2.5rem;
+    }
+
+    .judgment-label {
+      font-family: Georgia, serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 2rem;
+    }
+
+    .judgment-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .judgment-title em {
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .judgment-sub {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.9;
+      margin-bottom: 3rem;
+      font-style: italic;
+    }
+
+    .judgment-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: Georgia, serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      background: #fff;
+      padding: 1rem 2.5rem;
+      border: 1px solid #fff;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: Georgia, serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgba(255,255,255,0.6);
+      background: transparent;
+      padding: 1rem 2.5rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    .judgment-seal {
+      margin-top: 3rem;
+      font-family: Georgia, serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 1.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-left em { font-style: italic; }
+
+    .footer-right {
+      font-family: Georgia, serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(14px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity:0; } to { opacity:1; }
+    }
+    @keyframes scrollDrop {
+      0%   { transform:scaleY(0); transform-origin:top; }
+      50%  { transform:scaleY(1); transform-origin:top; }
+      51%  { transform:scaleY(1); transform-origin:bottom; }
+      100% { transform:scaleY(0); transform-origin:bottom; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .topbar       { padding: 0.85rem 1.5rem; }
+      .hero         { padding: 8rem 1.5rem 8rem; min-height: auto; }
+      .scroll-hint  { display: none; }
+      .hero-domain  { font-size: clamp(2.6rem, 14vw, 4rem); }
+      .section      { padding: 4rem 1.5rem; }
+      .container    { padding: 0 1.5rem; }
+      .definition-block { grid-template-columns: 1fr; }
+      .def-cell     { border-right: none; border-bottom: 1px solid var(--rule); }
+      .def-cell:last-child { border-bottom: none; }
+      .brief-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
+      .brief-sidebar { position: static; }
+      .ground-item  { grid-template-columns: 1fr; gap: 0.5rem; }
+      .ground-tag   { display: none; }
+      .parties-grid { grid-template-columns: 1fr; }
+      .party-card   { border-right: none; }
+      .party-card:nth-child(3) { border-bottom: 1px solid var(--rule); }
+      .judgment-section { padding: 5rem 1.5rem; }
+      .judgment-buttons { flex-direction: column; align-items: center; }
+      footer        { flex-direction: column; gap: 1rem; padding: 1.5rem; text-align: center; }
+      .sec-header   { flex-wrap: wrap; gap: 0.5rem; }
+      .sec-rule     { display: none; }
+    }
+  </style>
 </head>
-<body class="text-white antialiased font-sans">
-    <div class="max-w-3xl mx-auto py-12 px-6">
-        <header class="text-center mb-10">
-            <h1 class="text-5xl font-extrabold tracking-tighter mb-2">AKA LAWYER</h1>
-            <p class="text-blue-200 text-xs font-medium tracking-[0.4em] uppercase">Est. 2002 | AI Legal Intelligence</p>
-        </header>
+<body>
 
-        <div class="chat-container rounded-3xl border border-white/20 p-6 shadow-2xl">
-            <div id="chat-box" class="bg-white rounded-2xl h-[450px] overflow-y-auto p-6 mb-6 flex flex-col gap-4 shadow-inner text-navy text-sm">
-                <div class="bg-blue-50 p-4 rounded-xl self-start border border-blue-100">
-                    Welcome. I am <strong>AKA Lawyer</strong>. I am now powered by Grok-4-1-Fast. How can I help?
-                </div>
-            </div>
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-logo">AkaLawyer.com</div>
+  <div class="topbar-status">
+    <div class="status-rule"></div>
+    Domain Available for Acquisition
+  </div>
+</header>
 
-            <div class="relative">
-                <input id="user-input" type="text" placeholder="Describe your legal inquiry..." 
-                    class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-5 pr-36 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white">
-                <button onclick="askAI()" class="absolute right-2 top-2 bottom-2 bg-white text-[#004D8B] font-bold px-8 rounded-xl hover:bg-blue-50 active:scale-95 transition-all uppercase tracking-tighter">
-                    Consult
-                </button>
-            </div>
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-vol">Premium Legal Domain &mdash; Est. for the LegalTech Era</div>
+    <div class="hero-rule-top"></div>
+
+    <h1 class="hero-domain">
+      <span class="aka">Aka</span><span class="lawyer">Lawyer</span><span class="tld">.com</span>
+    </h1>
+
+    <div class="hero-rule-mid"></div>
+
+    <p class="hero-latin">Also Known As &mdash; The Lawyer You Need</p>
+    <p class="hero-translation">A.K.A. &mdash; The Most Cited Abbreviation in Legal Documents</p>
+
+    <p class="hero-sub">
+      A domain at the intersection of <strong>traditional legal authority</strong>
+      and <strong>AI-powered legal services</strong> &mdash; built for the law firm,
+      the legal consultant, and the platform <em>redefining how justice is accessed.</em>
+    </p>
+
+    <div class="scroll-hint">
+      <span>Continue Reading</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+
+  <!-- DEFINITION -->
+  <section class="section container">
+    <div class="sec-header">
+      <span class="sec-num">I.</span>
+      <h2 class="sec-title">Definition of Terms</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="definition-block">
+      <div class="def-cell">
+        <div class="def-term">AKA</div>
+        <div class="def-pronunciation">/ eI keI eI /</div>
+        <div class="def-rule"></div>
+        <div class="def-part">abbreviation &mdash; legal</div>
+        <p class="def-body">
+          <em>Also Known As.</em> One of the most universally recognized
+          abbreviations in the legal system. Appears in <strong>contracts,
+          court filings, criminal records, trademark registrations,
+          and corporate documents</strong> across every jurisdiction.
+          Understood instantly by every attorney, judge, and paralegal
+          on the planet.
+        </p>
+        <div class="def-cite">
+          &ldquo;The defendant, John Smith, AKA &lsquo;The Broker,&rsquo;
+          is hereby charged...&rdquo; &mdash; Standard legal phrasing,
+          U.S. District Courts
+        </div>
+      </div>
+      <div class="def-cell">
+        <div class="def-term">Lawyer</div>
+        <div class="def-pronunciation">/ lO:-j&ecirc;r /</div>
+        <div class="def-rule"></div>
+        <div class="def-part">noun &mdash; professional</div>
+        <p class="def-body">
+          A person qualified and authorized to practice law.
+          The single most trusted professional title in the English language.
+          <strong>Searched 10+ million times monthly</strong> across
+          legal help, consultation, and AI legal assistant platforms.
+          The word that closes every legal transaction.
+        </p>
+        <div class="def-cite">
+          &ldquo;The first thing we do, let&rsquo;s kill all the lawyers.&rdquo;
+          &mdash; Shakespeare, Henry VI &mdash; proving lawyers have been
+          indispensable for four centuries.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section container">
+    <div class="sec-header">
+      <span class="sec-num">II.</span>
+      <h2 class="sec-title">Statement of Facts</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="brief-grid">
+      <div class="brief-sidebar">
+        <div class="brief-sidebar-title">The Case For AkaLawyer.com</div>
+        <p class="brief-sidebar-sub">Two audiences. One domain. A brand built to serve both the attorney and the algorithm.</p>
+      </div>
+      <div class="brief-content">
+        <p>
+          The legal industry is undergoing its most significant transformation
+          since the printing press. <strong>Artificial intelligence is entering
+          the courtroom</strong> &mdash; not as a threat, but as counsel.
+          Contract analysis, legal research, case prediction, and client intake
+          are all being reshaped by machine intelligence.
+        </p>
+        <p>
+          At the same time, <strong>traditional law practice</strong> has never
+          been more competitive. Firms, solo practitioners, and legal consultants
+          all need a brand that communicates trust, authority, and accessibility
+          to the modern client.
+        </p>
+        <p>
+          <em>AkaLawyer.com</em> serves both worlds simultaneously. For the
+          <strong>traditional law firm</strong>, it signals that you are the lawyer
+          &mdash; the one clients think of first. For the <strong>AI legal platform</strong>,
+          it positions your product as the intelligent legal alter-ego,
+          the digital counsel that is &ldquo;also known as your lawyer.&rdquo;
+        </p>
+
+        <div class="exhibit-box">
+          <div class="exhibit-label">Exhibit A &mdash; The Core Proposition</div>
+          <div class="exhibit-text">
+            AKA Lawyer: the brand that tells every client, every judge,
+            and every investor exactly what you do &mdash; before you
+            open your mouth.
+          </div>
         </div>
 
-        <footer class="mt-8 text-center opacity-40 text-[10px] tracking-widest">
-            &copy; 2026 AKA LAWYER PROJECT | LEGACY SINCE 2002 | POWERED BY GROK-4-1-FAST
-        </footer>
+        <p>
+          The domain requires no explanation to its audience. Every English-speaking
+          person who has ever read a contract, watched a courtroom drama,
+          or searched for legal help <strong>already knows what AKA means.</strong>
+          You inherit that recognition on day one.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <script>
-        // 【重要】如果你正在测试且还没配置 GitHub Action，请临时把下面这行改成你的真实 API Key
-        // 比如: var SECRET_KEY = 'xai-C3vzGwnuy...';
-        var SECRET_KEY = 'AKA_LAWYER_SECRET_PLACEHOLDER';
+  <!-- GROUNDS / STRENGTHS -->
+  <section class="section container">
+    <div class="sec-header">
+      <span class="sec-num">III.</span>
+      <h2 class="sec-title">Grounds for Acquisition</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="grounds-list">
+      <div class="ground-item">
+        <div class="ground-num">First</div>
+        <div class="ground-text">
+          <h4>Instant Recognition Across All Audiences</h4>
+          <p>AKA is one of the most universally understood abbreviations in the English language. No branding budget required to explain it. No cultural barrier to cross. Every potential client already knows what it means.</p>
+        </div>
+        <div class="ground-tag">Universal</div>
+      </div>
+      <div class="ground-item">
+        <div class="ground-num">Second</div>
+        <div class="ground-text">
+          <h4>Dual Audience: Traditional Firms &amp; AI Platforms</h4>
+          <p>AkaLawyer.com works equally for a boutique law firm seeking a memorable brand, and for a LegalTech startup building the next AI legal assistant. The name does not force a choice between the two &mdash; it serves both.</p>
+        </div>
+        <div class="ground-tag">Versatile</div>
+      </div>
+      <div class="ground-item">
+        <div class="ground-num">Third</div>
+        <div class="ground-text">
+          <h4>Premium .COM Authority in a Trust-Sensitive Industry</h4>
+          <p>Legal clients are among the most trust-sensitive consumers online. A .com domain signals permanence and authority. In an industry where credibility is currency, the TLD matters as much as the name.</p>
+        </div>
+        <div class="ground-tag">.COM Authority</div>
+      </div>
+      <div class="ground-item">
+        <div class="ground-num">Fourth</div>
+        <div class="ground-text">
+          <h4>SEO Foundation in High-Value Legal Search</h4>
+          <p>"Lawyer" is among the highest-value keywords in Google Ads, commanding $50-200+ per click in competitive markets. A domain containing the exact word &ldquo;lawyer&rdquo; carries organic search relevance from day one.</p>
+        </div>
+        <div class="ground-tag">High-Value SEO</div>
+      </div>
+      <div class="ground-item">
+        <div class="ground-num">Fifth</div>
+        <div class="ground-text">
+          <h4>Memorable. Pronounceable. Brandable.</h4>
+          <p>Nine letters. Three syllables. Rolls off the tongue in English, Spanish, French, and beyond. Short enough for a business card. Distinctive enough to own a category.</p>
+        </div>
+        <div class="ground-tag">Global Ready</div>
+      </div>
+    </div>
+  </section>
 
-        function askAI() {
-            var input = document.getElementById('user-input');
-            var box = document.getElementById('chat-box');
-            var text = input.value;
+  <!-- PARTIES / BUYERS -->
+  <section class="section container">
+    <div class="sec-header">
+      <span class="sec-num">IV.</span>
+      <h2 class="sec-title">Interested Parties</h2>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="parties-grid">
+      <div class="party-card">
+        <div class="party-type">Plaintiff Type I</div>
+        <div class="party-name">Law Firms &amp; Solo Practitioners</div>
+        <p class="party-desc">Attorneys and boutique firms seeking a memorable, authoritative brand that positions them as the go-to counsel in their market. AkaLawyer.com is the domain that clients remember after a single search.</p>
+      </div>
+      <div class="party-card">
+        <div class="party-type">Plaintiff Type II</div>
+        <div class="party-name">AI Legal Platforms</div>
+        <p class="party-desc">LegalTech companies building AI-powered contract analysis, legal research, or client intake tools. AkaLawyer.com positions any AI legal product as the intelligent counsel available to anyone, anywhere.</p>
+      </div>
+      <div class="party-card">
+        <div class="party-type">Plaintiff Type III</div>
+        <div class="party-name">Legal Consultation Services</div>
+        <p class="party-desc">Online platforms offering on-demand legal advice, document review, or lawyer-matching services. The AKA framing communicates immediacy: the lawyer you need, right now, also known as your answer.</p>
+      </div>
+      <div class="party-card">
+        <div class="party-type">Plaintiff Type IV</div>
+        <div class="party-name">Legal Education &amp; Media</div>
+        <p class="party-desc">Law schools, continuing education platforms, legal podcasts, and media brands serving the legal community. A domain that commands attention in an industry built on the weight of words.</p>
+      </div>
+    </div>
+  </section>
 
-            if (!text || text.trim() === '') return;
-            input.value = '';
+</main>
 
-            // 用户气泡
-            var uDiv = document.createElement('div');
-            uDiv.className = 'bg-blue-600 text-white p-4 rounded-2xl self-end max-w-[85%] animate-fade-in';
-            uDiv.innerText = text;
-            box.appendChild(uDiv);
-            box.scrollTop = box.scrollHeight;
+<!-- JUDGMENT / CTA -->
+<section class="judgment-section">
+  <div class="judgment-inner">
+    <div class="judgment-rule-top"></div>
+    <div class="judgment-label">// Final Judgment</div>
+    <div class="judgment-title">
+      The Court Finds In Favor Of<br>
+      <em>AkaLawyer.com</em>
+    </div>
+    <p class="judgment-sub">
+      A domain that speaks the language of the law. Listed on Atom and Spaceship.
+      Secure the name before opposing counsel does.
+    </p>
+    <div class="judgment-buttons">
+      <a href="https://www.atom.com/view/name/akalawyer" class="btn-primary" target="_blank" rel="noopener">
+        View on Atom &rarr;
+      </a>
+      <a href="https://www.spaceship.com/domain-search/?query=akalawyer.com&beast=false&tab=domains" class="btn-secondary" target="_blank" rel="noopener">
+        View on Spaceship
+      </a>
+    </div>
+    <div class="judgment-seal">
+      So Ordered &bull; AkaLawyer.com &bull; Premium Domain Available
+    </div>
+  </div>
+</section>
 
-            // 构造完全对齐你提供的 curl 的请求
-            var payload = {
-                "model": "grok-4-1-fast",
-                "messages": [
-                    { "role": "system", "content": "You are AKA Lawyer, a professional AI legal consultant. Established in 2002." },
-                    { "role": "user", "content": text }
-                ],
-                "stream": false,
-                "temperature": 0
-            };
+<footer>
+  <div class="footer-left">Aka<em>Lawyer</em>.com</div>
+  <div class="footer-right">Premium Domain &bull; Available for Acquisition</div>
+</footer>
 
-            fetch('https://api.x.ai/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + SECRET_KEY
-                },
-                body: JSON.stringify(payload)
-            })
-            .then(function(res) {
-                // 如果返回的不是 200 OK，抛出具体的错误码
-                if (!res.ok) { 
-                    return res.json().then(function(errData) {
-                        throw new Error('HTTP ' + res.status + ': ' + (errData.error ? errData.error.message : 'Unknown API Error'));
-                    });
-                }
-                return res.json();
-            })
-            .then(function(data) {
-                var reply = data.choices[0].message.content;
-                var aDiv = document.createElement('div');
-                aDiv.className = 'bg-slate-50 p-4 rounded-2xl self-start max-w-[90%] border border-blue-100 text-navy animate-fade-in';
-                aDiv.innerHTML = reply.split('\n').join('<br>') + 
-                    '<div style="font-size:9px; color:#94a3b8; margin-top:10px; border-top:1px dotted #cbd5e1; pt-2">Grok-4-Fast Intelligence | Legacy 2002</div>';
-                box.appendChild(aDiv);
-                box.scrollTop = box.scrollHeight;
-            })
-            .catch(function(err) {
-                var eDiv = document.createElement('div');
-                eDiv.className = 'text-red-400 text-[11px] text-center font-bold py-4 uppercase tracking-widest';
-                // 这里会显示具体的错误原因
-                eDiv.innerText = 'Consultation Error: ' + err.message;
-                box.appendChild(eDiv);
-                console.error('Full Error Detail:', err);
-            });
-        }
-
-        document.getElementById('user-input').onkeypress = function(e) {
-            if (e.keyCode === 13) askAI();
-        };
-    </script>
 </body>
 </html>
